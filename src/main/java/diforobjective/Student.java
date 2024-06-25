@@ -2,7 +2,6 @@ package diforobjective;
 
 public class Student {
 	
-
 	MathCheat mc ;
 	int id;
 	public void setId(int id) {
