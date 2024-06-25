@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="matcheastforobjectivevalues" class="diforobjective.MathCheat"></bean>
+
+    <bean id="student" class="com.example.demo.dependencyinjection.Student">
+		<property  name="stname" value="KRISH"></property>
+		<property  name="id" value="103572"></property>
+	</bean>
+     <bean id="studentbyci" class="com.example.demo.dependencyinjection.StudentExamplebyCI">
+		<constructor-arg name="name" value="Arjun"></constructor-arg>
+		<constructor-arg name="id" value="4169"></constructor-arg>
+	</bean>
+	 <bean id="std" class="diforobjective.Student">
+		<property  name="mc" ref="matcheastforobjectivevalues" >
+			<!--<bean class="diforobjective.MathCheat"></bean> -->
+		</property>
+		<property  name="id" value="103572"></property>
+	</bean>
+	
+	
+	<bean id="astudent" class="diforobjective.AnotherStudent">
+		<property  name="mcheat" ref="matcheastforobjectivevalues" >
+			<!-- <bean class="diforobjective.MathCheat"></bean>-->
+		</property>
+		<property  name="id" value="123456"></property>
+
+	</bean>
+	<!-- We are using mathcheat for two student and we are using two times and storing and will make into it dynamic -->
+
+</beans>
